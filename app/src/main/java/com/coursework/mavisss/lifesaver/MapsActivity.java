@@ -110,6 +110,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         coordinates += listAddresses.get(0).getLatitude() + ",";
                         coordinates += listAddresses.get(0).getLongitude() + "";
 
+                        Toast.makeText(MapsActivity.this, coordinates, Toast.LENGTH_SHORT).show();
+
                         String address = "";
 
                         if (listAddresses.get(0).getAddressLine(0) != null) {
