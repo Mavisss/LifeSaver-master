@@ -93,24 +93,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mMap.clear();
                 mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Location")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 5));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 12));
 
                 Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
 
                 try {
 
-                    List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                    List<Address> listAddresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
 
-                    if (addresses != null && addresses.size() > 0){
+                    if (listAddresses != null && listAddresses.size() > 0){
 
                         // Get Coordinates
-                        Log.i("PlaceInfo", addresses.get(0).toString());
+                        Log.i("PlaceInfo", listAddresses.get(0).toString());
                         String coordinates = "";
 
-                        coordinates += addresses.get(0).getLatitude() + ",";
-                        coordinates += addresses.get(0).getLongitude() + "";
+                        coordinates += listAddresses.get(0).getLatitude() + ",";
+                        coordinates += listAddresses.get(0).getLongitude() + "";
 
-                        Toast.makeText(MapsActivity.this, coordinates, Toast.LENGTH_SHORT).show();
+                        String address = "";
+
+                        if (listAddresses.get(0).getAddressLine(0) != null) {
+                            address += listAddresses.get(0).getAddressLine(0);
+                        }
+                        Toast.makeText(MapsActivity.this, address, Toast.LENGTH_SHORT).show();
+
 
 
                     }
