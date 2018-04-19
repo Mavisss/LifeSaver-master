@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.coursework.mavisss.lifesaver.ForgotPass"
+    android:background="@drawable/bg1">
+
+    <ImageView
+        android:id="@+id/imgMainLogo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/main_logo"
+        android:contentDescription="@null"
+        tools:ignore="InvalidId" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="We just need your email address to send your password reset"
+        android:textSize="25dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="170dp"/>
+
+    <EditText
+        android:id="@+id/txtRecoveredEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Enter you email address here"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/btnResetPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="170dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="Reset password"/>
+
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:text="Do not have an account? Sign up"
+        android:textColorLink="@android:color/white"
+        android:textColorHighlight="#00ffffff"/>
+
+
+</RelativeLayout>
